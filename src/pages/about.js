@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 
-import about from '../assets/images/about.jpg';
+import about from '../assets/images/gla_sailboat-sailing.jpg';
 const IndexPage = () => (
   <Layout activeLink="about">
     <section className="page-section about-heading">
@@ -18,22 +18,23 @@ const IndexPage = () => (
               <div className="bg-faded rounded p-5">
                 <h2 className="section-heading mb-4">
                   <span className="section-heading-upper">
-                    Strong Coffee, Strong Roots
+                    Beautiful Canvas, Beautiful Boats
                   </span>
-                  <span className="section-heading-lower">About Our Cafe</span>
+                  <span className="section-heading-lower">
+                    Our Canvas Story
+                  </span>
                 </h2>
                 <p>
-                  Founded in 1987 by the Hernandez brothers, our establishment
-                  has been serving up rich coffee sourced from artisan farmers
-                  in various regions of South and Central America. We are
-                  dedicated to travelling the world, finding the best coffee,
-                  and bringing back to you here in our cafe.
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Nihil fugit impedit velit voluptate quisquam, autem
+                  reprehenderit laboriosam quaerat ducimus earum porro iste ut
+                  in est culpa architecto quas laborum atque.
                 </p>
                 <p className="mb-0">
-                  We guarantee that you will fall in <em>lust</em> with our
-                  decadent blends the moment you walk inside until you finish
-                  your last sip. Join us for your daily routine, an outing with
-                  friends, or simply just to enjoy some alone time.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Inventore corporis autem minima quaerat asperiores aliquid non
+                  incidunt? Labore, sapiente totam aliquam dolores odio ut,
+                  dignissimos vitae ab error, ad eaque?
                 </p>
               </div>
             </div>
