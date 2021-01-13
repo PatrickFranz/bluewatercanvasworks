@@ -1,15 +1,28 @@
 import React from 'react';
-
 import Layout from '../components/Layout';
+import Img from 'gatsby-image';
 
-import about from '../assets/images/gla_sailboat-sailing.jpg';
-const IndexPage = () => (
+export const data = graphql`
+  query {
+    about: file(
+      relativePath: { eq: "assets/images/gla_sailboat-sailing.jpg" }
+    ) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
+
+const IndexPage = ({ data }) => (
   <Layout activeLink="about">
     <section className="page-section about-heading">
       <div className="container">
-        <img
+        <Img
           className="img-fluid rounded about-heading-img mb-3 mb-lg-0"
-          src={about}
+          fluid={data.about.childImageSharp.fluid}
           alt=""
         />
         <div className="about-heading-content">

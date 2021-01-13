@@ -1,37 +1,34 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import intro from '../assets/images/gla_sailboat-deck1.jpg';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 
-const data = graphql`
+export const query = graphql`
   query {
-    introImg: file(relativePath: { eq: "assets/images/intro.jpg" }) {
+    intro: file(relativePath: { eq: "assets/images/intro.jpg" }) {
       childImageSharp {
         fluid {
-          originalName
-          sizes
+          ...GatsbyImageSharpFluid
         }
       }
     }
   }
 `;
 
-const IndexPage = () => {
-  console.log(data);
+const IndexPage = ({ data }) => {
   return (
     <Layout activeLink="home">
       <section className="page-section clearfix">
         <div className="container">
           <div className="intro">
-            <img
+            <Img
               className="intro-img img-fluid mb-3 mb-lg-0 rounded"
-              src={intro}
+              fluid={data.intro.childImageSharp.fluid}
               alt=""
             />
             <div className="intro-text left-0 text-center bg-faded p-5 rounded">
               <h2 className="section-heading mb-4">
-                <span className="section-heading-upper">Quailty Canvas</span>
+                <span className="section-heading-upper">Quality Canvas</span>
                 <span className="section-heading-lower">
                   Making Your Boat Beautiful
                 </span>

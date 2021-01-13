@@ -1,12 +1,30 @@
 import React from 'react';
-
 import Layout from '../components/Layout';
+import Img from 'gatsby-image';
 
 import product1 from '../assets/images/gla_hunter1.jpg';
 import product2 from '../assets/images/gla_catamaran.jpg';
-import product3 from '../assets/images/products-03.jpg';
 
-const IndexPage = () => (
+export const data = graphql`
+  query {
+    project1: file(relativePath: { eq: "assets/images/gla_hunter1.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    project2: file(relativePath: { eq: "assets/images/gla_catamaran.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
+
+const IndexPage = ({ data }) => (
   <Layout activeLink="products">
     <section className="page-section">
       <div className="container">
@@ -21,9 +39,9 @@ const IndexPage = () => (
               </h2>
             </div>
           </div>
-          <img
+          <Img
             className="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-            src={product1}
+            fluid={data.project1.childImageSharp.fluid}
             alt=""
           />
           <div className="product-item-description d-flex mr-auto">
@@ -55,9 +73,9 @@ const IndexPage = () => (
               </h2>
             </div>
           </div>
-          <img
+          <Img
             className="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-            src={product2}
+            fluid={data.project2.childImageSharp.fluid}
             alt=""
           />
           <div className="product-item-description d-flex ml-auto">

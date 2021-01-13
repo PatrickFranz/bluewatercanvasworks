@@ -15,7 +15,6 @@ export default class Header extends Component {
 
   render() {
     const { openMenu } = this.state;
-    const { activeLink } = this.props;
     return (
       <nav className="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
         <div className="container">
@@ -41,51 +40,33 @@ export default class Header extends Component {
             id="navbarResponsive"
           >
             <ul className="navbar-nav text-center mx-auto">
-              <li
-                className={`nav-item px-lg-4 ${
-                  activeLink === 'home' ? 'active' : ''
-                }`}
-              >
-                <Link className="nav-link text-uppercase text-expanded" to="/">
+              <li className={`nav-item px-lg-4`}>
+                <Link
+                  className="nav-link text-uppercase text-expanded"
+                  to="/"
+                  activeClassName="active"
+                >
                   Home
                 </Link>
               </li>
-              <li
-                className={`nav-item px-lg-4 ${
-                  activeLink === 'about' ? 'active' : ''
-                }`}
-              >
+              <li className={`nav-item px-lg-4`}>
                 <Link
                   className="nav-link text-uppercase text-expanded"
                   to="/about"
+                  activeClassName="active"
                 >
                   About
                 </Link>
               </li>
-              <li
-                className={`nav-item px-lg-4 ${
-                  activeLink === 'projects' ? 'active' : ''
-                }`}
-              >
+              <li className={`nav-item px-lg-4`}>
                 <Link
                   className="nav-link text-uppercase text-expanded"
                   to="/projects"
+                  activeClassName="active"
                 >
                   Projects
                 </Link>
               </li>
-              {/* <li
-                className={`nav-item px-lg-4 ${
-                  activeLink === 'store' ? 'active' : ''
-                }`}
-              >
-                <Link
-                  className="nav-link text-uppercase text-expanded"
-                  to="/store"
-                >
-                  Store
-                </Link>
-              </li> */}
             </ul>
           </div>
         </div>

@@ -1,20 +1,25 @@
 #mainNav {
   background-color: fade-out($secondary, 0.1);
+  box-shadow: 0px 6px 7px -1px rgba(155, 89, 182, 0.5);
+  -webkit-box-shadow: 0px 6px 7px -1px rgba(155, 89, 182, 0.5);
+  -moz-box-shadow: 0px 6px 7px -1px rgba(155, 89, 182, 0.5);
   @include heading-font;
   .navbar-brand {
     color: $primary;
   }
+
+  .active {
+    color: $primary !important;
+    transform: scale(1.2);
+    text-shadow: 0px 8px 31px rgba(255, 255, 255, 0.6);
+  }
+
   .navbar-nav {
     .nav-item {
       .nav-link {
-        color: fade-out($white, 0.3);
-
+        transition: all 500ms ease-in;
+        color: fade-out($white, 0.1);
         font-weight: 800;
-      }
-      &.active {
-        .nav-link {
-          color: $primary;
-        }
       }
     }
   }
@@ -24,12 +29,8 @@
         .nav-link {
           font-size: 0.9rem;
           &:hover {
-            color: fade-out($white, 0.6);
-          }
-        }
-        &.active {
-          .nav-link:hover {
-            color: $primary;
+            color: fade-out($primary, 0.1);
+            transform: scale(1.2);
           }
         }
       }
