@@ -1,9 +1,8 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Img from 'gatsby-image';
-
-import product1 from '../assets/images/gla_hunter1.jpg';
-import product2 from '../assets/images/gla_catamaran.jpg';
+import { graphql } from 'gatsby';
+import Fade from 'react-fade-in';
 
 export const data = graphql`
   query {
@@ -25,72 +24,78 @@ export const data = graphql`
 `;
 
 const IndexPage = ({ data }) => (
-  <Layout activeLink="products">
-    <section className="page-section">
-      <div className="container">
-        <div className="product-item">
-          <div className="product-item-title d-flex">
-            <div className="bg-faded p-5 d-flex ml-auto rounded">
-              <h2 className="section-heading mb-0">
-                <span className="section-heading-upper">Restored to glory</span>
-                <span className="section-heading-lower">
-                  Hunter 45 - Osprey
-                </span>
-              </h2>
+  <Layout>
+    <Fade transitionDuration="1000">
+      <section className="page-section">
+        <div className="container">
+          <div className="product-item">
+            <div className="product-item-title d-flex">
+              <div className="bg-faded p-5 d-flex ml-auto rounded">
+                <h2 className="section-heading mb-0">
+                  <span className="section-heading-upper">
+                    Restored to glory
+                  </span>
+                  <span className="section-heading-lower">
+                    Hunter 45 - Osprey
+                  </span>
+                </h2>
+              </div>
             </div>
-          </div>
-          <Img
-            className="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-            fluid={data.project1.childImageSharp.fluid}
-            alt=""
-          />
-          <div className="product-item-description d-flex mr-auto">
-            <div className="bg-faded p-5 rounded">
-              <p className="mb-0">
-                We take pride in our work, and it shows. Lorem, ipsum dolor sit
-                amet consectetur adipisicing elit. Vitae dolores amet, ullam quo
-                ea architecto odit officia recusandae modi quibusdam sunt fugiat
-                unde consequuntur pariatur error magni nobis minima inventore.
-              </p>
+            <Img
+              className="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
+              fluid={data.project1.childImageSharp.fluid}
+              alt=""
+            />
+            <div className="product-item-description d-flex mr-auto">
+              <div className="bg-faded p-5 rounded">
+                <p className="mb-0">
+                  We take pride in our work, and it shows. Lorem, ipsum dolor
+                  sit amet consectetur adipisicing elit. Vitae dolores amet,
+                  ullam quo ea architecto odit officia recusandae modi quibusdam
+                  sunt fugiat unde consequuntur pariatur error magni nobis
+                  minima inventore.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section className="page-section">
-      <div className="container">
-        <div className="product-item">
-          <div className="product-item-title d-flex">
-            <div className="bg-faded p-5 d-flex mr-auto rounded">
-              <h2 className="section-heading mb-0">
-                <span className="section-heading-upper">
-                  Show your new colors
-                </span>
-                <span className="section-heading-lower">
-                  Fancy Catamaran - Dockmaster
-                </span>
-              </h2>
+      <section className="page-section">
+        <div className="container">
+          <div className="product-item">
+            <div className="product-item-title d-flex">
+              <div className="bg-faded p-5 d-flex mr-auto rounded">
+                <h2 className="section-heading mb-0">
+                  <span className="section-heading-upper">
+                    Show your new colors
+                  </span>
+                  <span className="section-heading-lower">
+                    Fancy Catamaran - Dockmaster
+                  </span>
+                </h2>
+              </div>
             </div>
-          </div>
-          <Img
-            className="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-            fluid={data.project2.childImageSharp.fluid}
-            alt=""
-          />
-          <div className="product-item-description d-flex ml-auto">
-            <div className="bg-faded p-5 rounded">
-              <p className="mb-0">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                id blanditiis nostrum et voluptatibus distinctio modi
-                exercitationem repudiandae, accusantium pariatur sit assumenda?
-                Quam velit reiciendis repellendus voluptate ullam, labore vel.
-              </p>
+            <Img
+              className="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
+              fluid={data.project2.childImageSharp.fluid}
+              alt=""
+            />
+            <div className="product-item-description d-flex ml-auto">
+              <div className="bg-faded p-5 rounded">
+                <p className="mb-0">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ducimus id blanditiis nostrum et voluptatibus distinctio modi
+                  exercitationem repudiandae, accusantium pariatur sit
+                  assumenda? Quam velit reiciendis repellendus voluptate ullam,
+                  labore vel.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Fade>
   </Layout>
 );
 

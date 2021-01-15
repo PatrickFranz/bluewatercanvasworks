@@ -67,6 +67,15 @@ export default class Header extends Component {
                   Projects
                 </Link>
               </li>
+              <li className={`nav-item px-lg-4`}>
+                <Link
+                  className="nav-link text-uppercase text-expanded"
+                  to="/contact"
+                  activeClassName="active"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
