@@ -19,7 +19,7 @@ export default class Header extends Component {
       <nav className="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
         <div className="container">
           <a
-            className="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
+            className="navbar-brand text-uppercase text-expanded d-lg-none"
             href="/#"
           >
             {config.siteTitle}

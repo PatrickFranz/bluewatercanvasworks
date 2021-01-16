@@ -5,7 +5,7 @@
   -moz-box-shadow: 0px 6px 7px -1px rgba(155, 89, 182, 0.5);
   @include heading-font;
   .navbar-brand {
-    color: $primary;
+    color: $white;
   }
 
   .active {
@@ -18,9 +18,9 @@
   .navbar-nav {
     .nav-item {
       .nav-link {
-        transition: all 250ms ease-in;
+        transition: all 500ms ease-in;
         color: fade-out($white, 0.1);
-        font-weight: 800;
+        font-weight: 400;
       }
     }
   }
@@ -28,11 +28,11 @@
     .navbar-nav {
       .nav-item {
         .nav-link {
-          font-size: 0.9rem;
+          font-size: 1.25rem;
           &:hover {
             color: fade-out($primary, 0.1);
+            border-bottom: 1px solid $primary;
             transform: translateY(-5px);
-            // transform: scale(1.2);
           }
         }
       }

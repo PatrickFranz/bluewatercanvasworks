@@ -4,6 +4,7 @@ import Fade from 'react-fade-in';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import QuoteForm from '../components/FormQuote';
 
 export default function Contact() {
   const data = useStaticQuery(graphql`
@@ -26,9 +27,6 @@ export default function Contact() {
       }
     }
   `);
-
-  console.log(data);
-
   return (
     <Layout>
       <Fade>
@@ -58,7 +56,7 @@ export default function Contact() {
                   fluid={data.phone.childImageSharp.fluid}
                 />
               </div>
-              <div className="col-xl-7 overlap-left-up">
+              <div className="col-xl-7 overlap-left-down">
                 <div className="bg-faded rounded p-5">
                   <h2 className="section-heading mb-4">
                     <span className="section-heading-upper pad-left">
@@ -91,17 +89,13 @@ export default function Contact() {
                 <div className="bg-faded rounded p-5">
                   <h2 className="section-heading mb-4">
                     <span className="section-heading-upper pad-left">
-                      By email
+                      By Email
                     </span>
                     <span className="section-heading-lower">
-                      Fill in the form
+                      Request a Quote
                     </span>
                   </h2>
-                  <h2 className="section-heading mb-4">
-                    <span className="section-heading-lower contact-phone-text">
-                      SUCH FORM!
-                    </span>
-                  </h2>
+                  <QuoteForm />
                 </div>
               </div>
             </div>

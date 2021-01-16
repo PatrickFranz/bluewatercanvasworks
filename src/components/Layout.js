@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-import '../assets/sass/business-casual.scss';
+import '../assets/sass/bluewater.scss';
 import Footer from './Footer';
 import SiteHeader from './SiteHeader';
 import Header from './Header';
@@ -33,7 +33,7 @@ class Layout extends Component {
             <Helmet
               title={data.site.siteMetadata.title}
               meta={[
-                { name: 'description', content: 'Casual' },
+                { name: 'description', content: 'SF Bay Canvas Works' },
                 { name: 'keywords', content: 'site, web' },
               ]}
             >

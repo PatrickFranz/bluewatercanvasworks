@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: 'Bluewater Canvas', // <title>
+  siteTitle: 'Blue Water Canvas Works', // <title>
   manifestName: 'Casual',
   manifestShortName: 'Landing', // max 12 characters
   manifestStartUrl: '/',
@@ -8,6 +8,7 @@ module.exports = {
   manifestDisplay: 'standalone',
   manifestIcon: 'src/assets/img/favicon-32x32.png',
   pathPrefix: `/bluewatercanvas/`, // This path is subpath of your hosting https://domain/portfolio
-  heading: 'Bluewater Canvas',
+  heading: 'Blue Water',
+  heading2: 'Canvas Works',
   subHeading: 'Canvas Design for the San Francisco Bay',
 };

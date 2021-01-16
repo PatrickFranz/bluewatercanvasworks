@@ -2,18 +2,36 @@
   padding-bottom: 4rem;
 }
 .contact-section {
-  .overlap-left-down {
-    right: 60px;
-    top: 25px;
+  .p-5 {
+    padding: 2rem !important;
   }
-  .overlap-left-up {
-    right: 60px;
-    bottom: 25px;
+  .section-heading-lower {
+    font-size: 2rem;
   }
-  .contact-phone-text {
-    text-align: center;
-    font-weight: 200;
+}
+
+@media (min-width: 1200px) {
+  .contact-section {
+    .p-5 {
+      padding: 3rem !important;
+    }
+    .section-heading-lower {
+      font-size: 3rem;
+    }
+    .overlap-left-down {
+      right: 60px;
+      top: 25px;
+    }
+    .overlap-left-up {
+      right: 60px;
+      bottom: 25px;
+    }
   }
+}
+
+.contact-phone-text {
+  text-align: center;
+  font-weight: 200;
 }
 
 .pad-left {
