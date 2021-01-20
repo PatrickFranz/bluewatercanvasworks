@@ -6,9 +6,7 @@ import { graphql } from 'gatsby';
 
 export const data = graphql`
   query {
-    about: file(
-      relativePath: { eq: "assets/images/gla_sailboat-sailing.jpg" }
-    ) {
+    about: file(relativePath: { eq: "assets/images/story-rainbow.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -40,18 +38,31 @@ const IndexPage = ({ data }) => (
                       Our Canvas Story
                     </span>
                   </h2>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nihil fugit impedit velit voluptate quisquam, autem
-                    reprehenderit laboriosam quaerat ducimus earum porro iste ut
-                    in est culpa architecto quas laborum atque.
+                  <p className="about-text">
+                    My love for sailing and boats started at the age of 4,
+                    sailing with my family in Long Island Sound aboard our 33’
+                    Vanguard. We've sailed the Virgin Islands, Bermuda, and more
+                    recently the California Coast and San Francisco Bay which
+                    has been our home for the past 35 years. You'll often see us
+                    cruising the SF Bay in our 50' Valiant or taking weekend
+                    trips up and down our beautiful Pacific Coast.
                   </p>
-                  <p className="mb-0">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Inventore corporis autem minima quaerat asperiores aliquid
-                    non incidunt? Labore, sapiente totam aliquam dolores odio
-                    ut, dignissimos vitae ab error, ad eaque?
+                  <p className="about-text">
+                    I learned to sew and fabricate canvas from one of the best
+                    in the business, Mark Hood at Hood Canvas LLC, in Merrimac,
+                    MA. My years of boating have taught me that canvas needs to
+                    be functional while remaining beautiful. My attention to
+                    detail will make sure that your project turns out better
+                    than you could imagine.
                   </p>
+                </div>
+                <div className="owner-container">
+                  {/* <Img></Img> */}
+                  <img
+                    className="owner-image rounded img-fluid"
+                    src="https://via.placeholder.com/150"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>

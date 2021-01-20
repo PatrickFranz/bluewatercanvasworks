@@ -8,6 +8,8 @@ export default function QuoteForm() {
       name: '',
       email: '',
       phone: '',
+      boatType: '',
+      boatLocation: '',
       description: '',
     },
     onSubmit: values => {
@@ -47,6 +49,30 @@ export default function QuoteForm() {
           placeholder="Phone number"
           onChange={formik.handleChange}
           value={formik.values.phone}
+        />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Control
+          name="boatType"
+          type="text"
+          id="boatType"
+          size="lg"
+          placeholder="Boat Model / Manufacturer"
+          onChange={formik.handleChange}
+          value={formik.values.boatType}
+        />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Control
+          name="boatLocation"
+          type="text"
+          id="boatLocation"
+          size="lg"
+          placeholder="Location of Boat (City / Marina)"
+          onChange={formik.handleChange}
+          value={formik.values.boatLocation}
         />
       </Form.Group>
       <Form.Group>

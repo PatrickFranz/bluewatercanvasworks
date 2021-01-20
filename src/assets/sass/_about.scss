@@ -11,3 +11,19 @@
     }
   }
 }
+
+.about-text {
+  font-size: 1.2rem;
+}
+
+.owner-container {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  top: -50px;
+  right: 50px;
+
+  .owner-image {
+    opacity: 0.9;
+  }
+}

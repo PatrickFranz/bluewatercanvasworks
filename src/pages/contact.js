@@ -68,7 +68,7 @@ export default function Contact() {
                   </h2>
                   <h2 className="section-heading mb-4">
                     <span className="section-heading-lower contact-phone-text">
-                      650.650.1234
+                      415-572-0891
                     </span>
                   </h2>
                 </div>

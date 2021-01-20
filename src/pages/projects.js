@@ -3,16 +3,23 @@ import Layout from '../components/Layout';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import Fade from 'react-fade-in';
+import { Carousel } from 'react-bootstrap';
 
 export const data = graphql`
   query {
-    project1: file(relativePath: { eq: "assets/images/gla_hunter1.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
+    hurrica: allFile(
+      filter: { relativeDirectory: { eq: "assets/images/projects/hurricav" } }
+    ) {
+      nodes {
+        relativePath
+        childImageSharp {
+          fluid(maxHeight: 800) {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }
+
     project2: file(relativePath: { eq: "assets/images/gla_catamaran.jpg" }) {
       childImageSharp {
         fluid {
@@ -23,80 +30,60 @@ export const data = graphql`
   }
 `;
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <Fade transitionDuration="1000">
-      <section className="page-section">
-        <div className="container">
-          <div className="product-item">
-            <div className="product-item-title d-flex">
-              <div className="bg-faded p-5 d-flex ml-auto rounded">
-                <h2 className="section-heading mb-0">
-                  <span className="section-heading-upper">
-                    Restored to glory
-                  </span>
-                  <span className="section-heading-lower">
-                    Hunter 45 - Osprey
-                  </span>
-                </h2>
+const IndexPage = ({ data }) => {
+  //DON'T PRETTIFY
+  return (
+    <Layout>
+      <Fade transitionDuration="1000">
+        <section className="page-section">
+          <div className="container">
+            <div className="product-item">
+              <div className="product-item-title d-flex">
+                <div className="bg-faded p-5 d-flex ml-auto rounded">
+                  <h2 className="section-heading mb-0">
+                    <span className="section-heading-upper">
+                      Protecting a Legend
+                    </span>
+                    <span className="section-heading-lower">
+                      1923 Victorian Ketch - Hurrica V
+                    </span>
+                  </h2>
+                </div>
               </div>
-            </div>
-            <Img
-              className="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-              fluid={data.project1.childImageSharp.fluid}
-              alt=""
-            />
-            <div className="product-item-description d-flex mr-auto">
-              <div className="bg-faded p-5 rounded">
-                <p className="mb-0">
-                  We take pride in our work, and it shows. Lorem, ipsum dolor
-                  sit amet consectetur adipisicing elit. Vitae dolores amet,
-                  ullam quo ea architecto odit officia recusandae modi quibusdam
-                  sunt fugiat unde consequuntur pariatur error magni nobis
-                  minima inventore.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="page-section">
-        <div className="container">
-          <div className="product-item">
-            <div className="product-item-title d-flex">
-              <div className="bg-faded p-5 d-flex mr-auto rounded">
-                <h2 className="section-heading mb-0">
-                  <span className="section-heading-upper">
-                    Show your new colors
-                  </span>
-                  <span className="section-heading-lower">
-                    Fancy Catamaran - Dockmaster
-                  </span>
-                </h2>
-              </div>
-            </div>
-            <Img
-              className="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-              fluid={data.project2.childImageSharp.fluid}
-              alt=""
-            />
-            <div className="product-item-description d-flex ml-auto">
-              <div className="bg-faded p-5 rounded">
-                <p className="mb-0">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Ducimus id blanditiis nostrum et voluptatibus distinctio modi
-                  exercitationem repudiandae, accusantium pariatur sit
-                  assumenda? Quam velit reiciendis repellendus voluptate ullam,
-                  labore vel.
-                </p>
+              <Carousel>
+                {data.hurrica.nodes.map(img => (
+                  <Carousel.Item>
+                    <Img
+                      className="product-item-img mx-auto d-block rounded img-fluid"
+                      fluid={img.childImageSharp.fluid}
+                      alt=""
+                    />
+                  </Carousel.Item>
+                ))}
+              </Carousel>
+              <div className="product-item-description d-flex mr-auto">
+                <div className="bg-faded p-5 rounded">
+                  <p className="mb-0">
+                    A truely classic yacht that has had an extensive refit and
+                    recently arrived from Australia. There was a temendous
+                    amount of work put into restoring this beautiful piece of
+                    sailing history. It was our job to design and manufacture
+                    canvas that would protect the vessel while keeping true to
+                    its classic design.
+                  </p>
+                  <p>
+                    We built hatch covers and winch covers that would keep the
+                    elements out, and blend in with the ashen teak and
+                    spectacular brightwork.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </Fade>
-  </Layout>
-);
+        </section>
+      </Fade>
+    </Layout>
+  );
+};
 
 export default IndexPage;

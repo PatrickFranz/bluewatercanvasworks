@@ -1,12 +1,12 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Img from 'gatsby-image';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Fade from 'react-fade-in';
 
 export const query = graphql`
   query {
-    intro: file(relativePath: { eq: "assets/images/intro.jpg" }) {
+    intro: file(relativePath: { eq: "assets/images/intro-winch.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -36,15 +36,16 @@ const IndexPage = ({ data }) => {
                   </span>
                 </h2>
                 <p className="mb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Perferendis vitae magnam debitis repudiandae odio neque ipsa
-                  vel laborum. Officia amet nulla quo, itaque sed voluptatum cum
-                  doloremque animi sapiente quos.
+                  Your boat was designed to take you around The Bay and around
+                  the world. It's an engineering marvel built to look good even
+                  in ugly conditions. Our canvas work protects your investment
+                  from the elements, looks fantastic, and makes your amazing
+                  vessel even better!
                 </p>
                 <div className="intro-button mx-auto">
-                  <a className="btn btn-primary btn-xl" href="/#">
+                  <Link to="/contact" className="btn btn-primary btn-xl">
                     Get A Quote!
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -60,11 +61,13 @@ const IndexPage = ({ data }) => {
                     <span className="section-heading-upper">Our Promise</span>
                     <span className="section-heading-lower">To You</span>
                   </h2>
-                  <p className="mb-0">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Dolore veritatis vel quo illo quidem labore sequi eveniet
-                    corrupti laudantium consectetur unde reiciendis mollitia
-                    aperiam, incidunt optio odio velit ab. Beatae!
+                  <p className="mb-0 text-center">
+                    We promise to make your boat more beautiful, more
+                    functional, and make you smile every time you go aboard. We
+                    are meticulous from the initial, grand idea down to the
+                    finest of details. It might take a little longer, but we
+                    will make sure what goes on your boat is something we would
+                    be proud to put on ours.
                   </p>
                 </div>
               </div>
