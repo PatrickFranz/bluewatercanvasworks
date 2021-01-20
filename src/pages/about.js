@@ -41,11 +41,12 @@ const IndexPage = ({ data }) => (
                   <p className="about-text">
                     My love for sailing and boats started at the age of 4,
                     sailing with my family in Long Island Sound aboard our 33’
-                    Vanguard. We've sailed the Virgin Islands, Bermuda, and more
-                    recently the California Coast and San Francisco Bay which
-                    has been our home for the past 35 years. You'll often see us
-                    cruising the SF Bay in our 50' Valiant or taking weekend
-                    trips up and down our beautiful Pacific Coast.
+                    Vanguard. Though the years and on different boats we've
+                    sailed the Virgin Islands, Bermuda and most recently the
+                    California Coast and San Francisco Bay which has been our
+                    home for the past 35 years. You'll often see us cruising the
+                    SF Bay in our 50' Valiant or taking weekend trips up and
+                    down our beautiful Pacific Coast.
                   </p>
                   <p className="about-text">
                     I learned to sew and fabricate canvas from one of the best

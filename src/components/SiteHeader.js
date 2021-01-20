@@ -16,17 +16,22 @@ export default function SiteHeader() {
       }
     }
   `);
-  console.log(logo);
   return (
     <Container className="site-header">
       <h1 className="site-heading text-center d-none d-lg-block">
-        <span className="site-heading-upper text-faded mb-3">
+        <span className="site-heading-upper text-faded mb-4">
           {config.subHeading}
         </span>
       </h1>
-      <Img className="mx-auto" fluid={logo.childImageSharp.fluid} />
-      {/* <span className="site-heading-lower">{config.heading}</span>
-      <span className="site-heading2-lower">{config.heading2}</span> */}
+      <div className="cta">
+        <div className="cta-inner rounded img-container mx-auto">
+          <Img
+            loading="eager"
+            className="heading-logo mx-auto"
+            fluid={logo.childImageSharp.fluid}
+          />
+        </div>
+      </div>
     </Container>
   );
 }

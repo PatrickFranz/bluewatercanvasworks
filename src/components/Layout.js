@@ -34,7 +34,11 @@ class Layout extends Component {
               title={data.site.siteMetadata.title}
               meta={[
                 { name: 'description', content: 'SF Bay Canvas Works' },
-                { name: 'keywords', content: 'site, web' },
+                {
+                  name: 'keywords',
+                  content:
+                    'canvas, san francisco, design, manufacture, sailboat, powerboat, sail, sailing, sails, bimini, dodger, canvas design, canvas fabrication, boat fabric',
+                },
               ]}
             >
               <html lang="en" />

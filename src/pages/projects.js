@@ -11,19 +11,11 @@ export const data = graphql`
       filter: { relativeDirectory: { eq: "assets/images/projects/hurricav" } }
     ) {
       nodes {
-        relativePath
+        id
         childImageSharp {
           fluid(maxHeight: 800) {
             ...GatsbyImageSharpFluid
           }
-        }
-      }
-    }
-
-    project2: file(relativePath: { eq: "assets/images/gla_catamaran.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -51,11 +43,11 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
               <Carousel>
-                {data.hurrica.nodes.map(img => (
-                  <Carousel.Item>
+                {data.hurrica.nodes.map(node => (
+                  <Carousel.Item key={node.id}>
                     <Img
                       className="product-item-img mx-auto d-block rounded img-fluid"
-                      fluid={img.childImageSharp.fluid}
+                      fluid={node.childImageSharp.fluid}
                       alt=""
                     />
                   </Carousel.Item>
