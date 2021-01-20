@@ -1,4 +1,4 @@
-## Blue Water Canvas Works
+# Blue Water Canvas Works
 
 Website built for Blue Water Canvas Works in Redwood City
 
@@ -6,7 +6,7 @@ Website built for Blue Water Canvas Works in Redwood City
 @author-website: https://www.patrickfranz.com
 @build-date: Jan 2021
 
-# Technology Used
+## Technology Used
 
 Gatsby
 React
@@ -16,3 +16,21 @@ Sass
 Git
 Github
 Surge.sh
+
+## Build Process
+
+### Develop
+
+1. Clone repo
+   `git clone git@github.com:PatrickFranz/bluewatercanvasworks.git`
+
+2. Install dependancies
+   `npm i`
+3. Run `gatsby develop`
+4. Deploy to surge.sh
+   `gatsby build && surge public`
+
+### Deploy
+
+1. Start with Develop
+2. ??
