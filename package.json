@@ -11,7 +11,6 @@
     "email": "patrick@patrickfranz.com"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
     "formik": "^2.2.6",
     "gatsby": "^2.30.3",
     "gatsby-background-image": "^1.4.0",
@@ -30,6 +29,7 @@
     "react-dom": "^16.13.1",
     "react-fade-in": "^2.0.0",
     "react-helmet": "^5.2.1",
+    "react-recaptcha": "^2.3.10",
     "react-scrollspy": "^3.4.2",
     "sass": "^1.32.4",
     "smoothscroll-polyfill": "^0.4.4",
@@ -48,6 +48,11 @@
     "gh-pages": "^2.2.0",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2"
+  },
+  "react-dotenv": {
+    "whitelist": [
+      "SITE_RECAPTCHA_KEY"
+    ]
   },
   "license": "MIT",
   "bugs": {
