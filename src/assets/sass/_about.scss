@@ -18,12 +18,12 @@
 
 .owner-container {
   display: flex;
-  position: relative;
   justify-content: flex-end;
+  position: relative;
   top: -50px;
   right: 50px;
-
-  .owner-image {
-    opacity: 0.9;
+  .gatsby-image-wrapper {
+    max-width: 150px;
+    border-radius: 50% !important;
   }
 }
