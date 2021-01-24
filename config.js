@@ -11,5 +11,4 @@ module.exports = {
   heading: 'Blue Water',
   heading2: 'Canvas Works',
   subHeading: 'Canvas Design for the San Francisco Bay',
-  recaptchaSitekey: '6LcwAzgaAAAAAF-kHxaxe3tpCxEnTSOyDs6Vj-Z3',
 };
