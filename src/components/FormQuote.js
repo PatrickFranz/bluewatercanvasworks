@@ -1,5 +1,5 @@
-import React from 'react';
-import { Field, useFormik } from 'formik';
+import React, { useState, useEffect } from 'react';
+import { useFormik } from 'formik';
 import { Form, Button } from 'react-bootstrap';
 import Recaptcha from 'react-recaptcha';
 
@@ -10,6 +10,7 @@ const encode = data => {
 };
 
 export default function QuoteForm() {
+  const [token, setToken] = useState(null);
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -22,20 +23,21 @@ export default function QuoteForm() {
     },
     onSubmit: data => {
       console.log(data);
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content Type': 'application/x-www-form-urlencoded' },
-        body: encode({
-          'form-name': 'get-quote',
-          ...data,
-        }),
-      })
-        .then(() => {
-          console.log('Data sent...');
+      if (token !== null) {
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({
+            'form-name': 'contact-form',
+            ...data,
+            'g-recaptcha-response': token,
+          }),
         })
-        .catch(error => {
-          console.log('Error Sending...');
-        });
+          .then(() => {
+            console.log('send succeeded');
+          })
+          .catch(error => console.log('sending failed'));
+      }
     },
   });
   return (
@@ -46,8 +48,8 @@ export default function QuoteForm() {
       onSubmit={formik.handleSubmit}
     >
       <Form.Group>
-        <Field type="hidden" name="form-name" value="get-quote" />
-        <Field type="hidden" name="bot-field" />
+        <Form.Control type="hidden" name="form-name" value="get-quote" />
+        <Form.Control type="hidden" name="bot-field" />
         <Form.Control
           name="name"
           size="lg"
