@@ -1,6 +1,6 @@
 module.exports = {
   siteTitle: 'Blue Water Canvas Works', // <title>
-  manifestName: 'Casual',
+  manifestName: 'Blue Water Canvas Works',
   manifestShortName: 'Landing', // max 12 characters
   manifestStartUrl: '/',
   manifestBackgroundColor: '#663399',

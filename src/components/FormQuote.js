@@ -1,7 +1,13 @@
 import React from 'react';
-import { useFormik } from 'formik';
+import { Field, useFormik } from 'formik';
 import { Form, Button } from 'react-bootstrap';
 import Recaptcha from 'react-recaptcha';
+
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
 
 export default function QuoteForm() {
   const formik = useFormik({
@@ -14,13 +20,34 @@ export default function QuoteForm() {
       description: '',
       recaptcha: '',
     },
-    onSubmit: values => {
-      console.log(values);
+    onSubmit: data => {
+      console.log(data);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': 'get-quote',
+          ...data,
+        }),
+      })
+        .then(() => {
+          console.log('Data sent...');
+        })
+        .catch(error => {
+          console.log('Error Sending...');
+        });
     },
   });
   return (
-    <Form name="getquote" data-nelify="true" onSubmit={formik.handleSubmit}>
+    <Form
+      name="get-quote"
+      data-nelify="true"
+      data-nelify-honeypot="bot-field"
+      onSubmit={formik.handleSubmit}
+    >
       <Form.Group>
+        <Field type="hidden" name="form-name" value="get-quote" />
+        <Field type="hidden" name="bot-field" />
         <Form.Control
           name="name"
           size="lg"
