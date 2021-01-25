@@ -50,11 +50,6 @@
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2"
   },
-  "react-dotenv": {
-    "whitelist": [
-      "SITE_RECAPTCHA_KEY"
-    ]
-  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/PatrickFranz/bluewatercanvasworks/issues"

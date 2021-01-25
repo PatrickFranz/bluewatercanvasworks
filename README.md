@@ -1,5 +1,7 @@
 # Blue Water Canvas Works
 
+Build Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/89bc9402-a2ff-4762-afb5-03792670c507/deploy-status)](https://app.netlify.com/sites/bluewatercanvasworks/deploys)
+
 Website built for Blue Water Canvas Works in Redwood City
 
 @author: Patrick Franz
@@ -32,5 +34,9 @@ Surge.sh
 
 ### Deploy
 
+Deploy to live site by committing git to GitHub
+
 1. Start with Develop
-2. ??
+2. `git add .`
+3. `git commit`
+4. `git push` to above GitHub Repo
