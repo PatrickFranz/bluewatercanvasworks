@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import QuoteForm from '../components/FormQuote';
+import FormGetQuote from '../components/FormGetQuote';
 
 export default function Contact() {
   const data = useStaticQuery(graphql`
@@ -95,7 +96,8 @@ export default function Contact() {
                       Request a Quote
                     </span>
                   </h2>
-                  <QuoteForm />
+                  <FormGetQuote />
+                  {/* <QuoteForm /> */}
                 </div>
               </div>
             </div>

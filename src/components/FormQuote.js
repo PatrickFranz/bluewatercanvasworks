@@ -47,17 +47,19 @@ export default function QuoteForm() {
       data-nelify-honeypot="bot-field"
       onSubmit={formik.handleSubmit}
     >
-      <Form.Control type="hidden" name="form-name" value="get-quote" />
-      <Form.Control type="hidden" name="bot-field" />
-      <Form.Control
-        name="name"
-        size="lg"
-        type="text"
-        id="id"
-        placeholder="Your Full Name"
-        onChange={formik.handleChange}
-        value={formik.values.name}
-      />
+      <Form.Group>
+        <Form.Control type="hidden" name="form-name" value="get-quote" />
+        <Form.Control type="hidden" name="bot-field" />
+        <Form.Control
+          name="name"
+          size="lg"
+          type="text"
+          id="id"
+          placeholder="Your Full Name"
+          onChange={formik.handleChange}
+          value={formik.values.name}
+        />
+      </Form.Group>
       <Form.Group>
         <Form.Control
           name="email"
