@@ -55,9 +55,9 @@ const GetQuoteForm = () => {
           action="https://getform.io/f/447b7079-2561-48dd-bd85-aa421990d466"
           method="POST"
           name="get-quote"
-          data-nelify="true"
-          data-nelify-honeypot="bot-field"
-          onSubmit={handleSubmit}
+          // data-nelify="true"
+          // data-nelify-honeypot="bot-field"
+          // onSubmit={handleSubmit}
         >
           <Form.Group>
             <Form.Control type="hidden" name="form-name" value="get-quote" />
