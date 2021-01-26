@@ -32,16 +32,16 @@ const GetQuoteForm = () => {
         recaptcha: '',
       }}
       validationSchema={validationSchema}
-      onSubmit={(values, { setSubmitting, resetForm }) => {
-        // When button submits form and form is in the process of submitting, submit button is disabled
-        setSubmitting(true);
+      // onSubmit={(values, { setSubmitting, resetForm }) => {
+      //   // When button submits form and form is in the process of submitting, submit button is disabled
+      //   setSubmitting(true);
 
-        // Resets form after submission is complete
-        resetForm();
+      //   // Resets form after submission is complete
+      //   resetForm();
 
-        // Sets setSubmitting to false after form is reset
-        setSubmitting(false);
-      }}
+      //   // Sets setSubmitting to false after form is reset
+      //   setSubmitting(false);
+      // }}
     >
       {({
         values,
@@ -153,7 +153,7 @@ const GetQuoteForm = () => {
             variant="primary"
             type="submit"
             size="lg"
-            disabled={isSubmitting}
+            // disabled={isSubmitting}
           >
             Get Quote
           </Button>
