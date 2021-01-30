@@ -4,7 +4,6 @@ import Fade from 'react-fade-in';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import QuoteForm from '../components/FormQuote';
 import FormGetQuote from '../components/FormGetQuote';
 
 export default function Contact() {
