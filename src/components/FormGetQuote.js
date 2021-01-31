@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import { Form, Button } from 'react-bootstrap';
 import * as Yup from 'yup';
-import Recaptcha from 'react-recaptcha';
+import axios from 'axios';
 
 const GetQuoteForm = () => {
   const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
@@ -32,16 +32,18 @@ const GetQuoteForm = () => {
         recaptcha: '',
       }}
       validationSchema={validationSchema}
-      // onSubmit={(values, { setSubmitting, resetForm }) => {
-      //   // When button submits form and form is in the process of submitting, submit button is disabled
-      //   setSubmitting(true);
+      onSubmit={(values, { setSubmitting }) => {
+        // When button submits form and form is in the process of submitting, submit button is disabled
+        setSubmitting(true);
+        axios({
+          method: 'post',
+          url: 'https://getform.io/f/447b7079-2561-48dd-bd85-aa421990d466',
+          data: values,
+        }).then(r => console.log('Form submitted', r));
 
-      //   // Resets form after submission is complete
-      //   resetForm();
-
-      //   // Sets setSubmitting to false after form is reset
-      //   setSubmitting(false);
-      // }}
+        // Sets setSubmitting to false after form is reset
+        setSubmitting(false);
+      }}
     >
       {({
         values,
@@ -52,16 +54,14 @@ const GetQuoteForm = () => {
         isSubmitting,
       }) => (
         <Form
-          action="https://getform.io/f/447b7079-2561-48dd-bd85-aa421990d466"
-          method="POST"
           name="get-quote"
           // data-nelify="true"
           // data-nelify-honeypot="bot-field"
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
         >
           <Form.Group>
-            <Form.Control type="hidden" name="form-name" value="get-quote" />
-            <Form.Control type="hidden" name="bot-field" />
+            {/* <Form.Control type="hidden" name="form-name" value="get-quote" />
+            <Form.Control type="hidden" name="bot-field" /> */}
             <Form.Control
               name="name"
               size="lg"
@@ -142,18 +142,17 @@ const GetQuoteForm = () => {
             />
           </Form.Group>
           <Form.Group>
-            <Recaptcha
-              sitekey="6LcwAzgaAAAAAGlgUkFdY4vTse4lyzs1VpcIwNPS"
-              render="explicit"
-              theme="light"
-            />
+            {/* <div
+              className="g-recaptcha"
+              data-sitekey="6LcwAzgaAAAAAGlgUkFdY4vTse4lyzs1VpcIwNPS"
+            ></div> */}
           </Form.Group>
 
           <Button
             variant="primary"
             type="submit"
             size="lg"
-            // disabled={isSubmitting}
+            disabled={isSubmitting}
           >
             Get Quote
           </Button>
