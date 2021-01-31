@@ -42,11 +42,6 @@ class Layout extends Component {
               ]}
             >
               <html lang="en" />
-              <script
-                src={`https://www.google.com/recaptcha/api.js?r=${Math.random()}`}
-                async
-                defer
-              ></script>
             </Helmet>
             <div className={'page-top'}>
               {!noSiteHeader ? <SiteHeader /> : null}
