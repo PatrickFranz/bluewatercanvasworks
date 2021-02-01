@@ -1,5 +1,7 @@
 # Project dependencies
 .env
+.env.development
+.env.production
 .cache
 node_modules
 yarn-error.log
@@ -7,6 +9,6 @@ package-lock.json
 yarn.lock
 
 # Build directory
-/public
-/static
+/gatsby/public
+/gatsby/static
 .DS_Store
