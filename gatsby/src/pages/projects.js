@@ -10,13 +10,7 @@ export const data = graphql`
       nodes {
         boatinfo {
           boatName
-          coverimage {
-            asset {
-              fluid {
-                ...GatsbySanityImageFluid
-              }
-            }
-          }
+
           manufacturer
           model
           yearbuilt
@@ -25,6 +19,13 @@ export const data = graphql`
         id
         tagline
         title
+        coverimage {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
         carouselImages {
           asset {
             id

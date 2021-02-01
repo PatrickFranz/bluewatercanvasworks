@@ -26,13 +26,5 @@ export default {
         dateFormat: "yyyy",
       },
     },
-    {
-      name: "coverimage",
-      title: "Cover Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
   ],
 };

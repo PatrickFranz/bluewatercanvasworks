@@ -17,6 +17,14 @@ export default {
       type: "string",
     },
     {
+      name: "coverimage",
+      title: "Cover Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: "boatinfo",
       title: "Boat Information",
       type: "boatinfo",
