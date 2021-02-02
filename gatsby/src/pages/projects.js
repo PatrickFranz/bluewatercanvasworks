@@ -10,7 +10,6 @@ export const data = graphql`
       nodes {
         boatinfo {
           boatName
-
           manufacturer
           model
           yearbuilt
@@ -19,21 +18,32 @@ export const data = graphql`
         id
         tagline
         title
-        coverimage {
-          asset {
-            fluid {
-              ...GatsbySanityImageFluid
+        carouselImages {
+          alt
+          image {
+            asset {
+              id
+              fluid {
+                ...GatsbySanityImageFluid
+              }
+            }
+            hotspot {
+              height
+              width
+              x
+              y
             }
           }
         }
-        carouselImages {
-          asset {
-            id
-
-            fluid {
-              ...GatsbySanityImageFluid
+        coverimage {
+          image {
+            asset {
+              fluid {
+                ...GatsbySanityImageFluid
+              }
             }
           }
+          alt
         }
       }
       totalCount
@@ -42,7 +52,7 @@ export const data = graphql`
 `;
 
 const IndexPage = ({ data }) => {
-  // console.log(data);
+  console.log(data);
   const projects = data.projects.nodes;
   //DON'T PRETTIFY
   return (

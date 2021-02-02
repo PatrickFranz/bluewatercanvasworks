@@ -31,10 +31,11 @@ export default function Project({ project }) {
             </div>
             <Carousel>
               {project.carouselImages.map(image => (
-                <Carousel.Item key={image.asset.id}>
+                <Carousel.Item key={image.image.asset.id}>
                   <Img
                     className="product-item-img mx-auto d-block rounded img-fluid"
-                    fluid={image.asset.fluid}
+                    fluid={image.image.asset.fluid}
+                    alt={image.alt}
                   />
                 </Carousel.Item>
               ))}
