@@ -20,7 +20,7 @@ export default function Footer() {
   `);
   return (
     <footer className="footer text-faded text-center py-5">
-      <Container fluid="sm">
+      <Container fluid>
         <Row>
           <Col>
             <Img fluid={logo.childImageSharp.fluid} />
