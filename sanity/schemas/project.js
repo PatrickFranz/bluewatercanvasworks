@@ -2,7 +2,7 @@ import { GrProjects as icon } from "react-icons/gr";
 
 export default {
   name: "project",
-  title: "Project",
+  title: "Projects",
   type: "document",
   icon,
   fields: [
@@ -29,7 +29,7 @@ export default {
     {
       name: "description",
       title: "Project Description",
-      type: "string",
+      type: "text",
     },
     {
       name: "carouselImages",
