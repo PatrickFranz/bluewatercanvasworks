@@ -1,5 +1,30 @@
 .footer {
-  color: $black;
+  color: $white;
   font-size: 1.5rem;
-  background-color: fade-out($secondary, 0.1);
+  background-color: fade-out($footer-bg, 0.1);
+
+  .footer-heading {
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  .gatsby-image-wrapper {
+    max-width: 200px;
+    margin: 0 auto;
+  }
 }
