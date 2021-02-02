@@ -19,10 +19,7 @@ export default {
     {
       name: "coverimage",
       title: "Cover Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
+      type: "figure",
     },
     {
       name: "boatinfo",
@@ -32,7 +29,7 @@ export default {
     {
       name: "description",
       title: "Project Description",
-      type: "text",
+      type: "string",
     },
     {
       name: "carouselImages",
@@ -40,8 +37,7 @@ export default {
       type: "array",
       of: [
         {
-          type: "image",
-          options: { hotspot: true },
+          type: "figure",
         },
       ],
     },
