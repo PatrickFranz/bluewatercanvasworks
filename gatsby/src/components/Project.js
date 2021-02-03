@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import { Carousel } from 'react-bootstrap';
 
 export default function Project({ project }) {
-  console.log(project);
+  // console.log(project);
   return (
     <>
       <section className="page-section">

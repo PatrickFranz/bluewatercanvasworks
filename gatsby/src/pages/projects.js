@@ -52,9 +52,9 @@ export const data = graphql`
 `;
 
 const IndexPage = ({ data }) => {
-  console.log(data);
-  const projects = data.projects.nodes;
+  // console.log(data);
   //DON'T PRETTIFY
+  const projects = data.projects.nodes;
   return (
     <Layout>
       <Fade transitionDuration="1000">

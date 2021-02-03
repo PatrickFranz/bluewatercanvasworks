@@ -4,10 +4,18 @@
   background-color: fade-out($footer-bg, 0.1);
 
   .footer-heading {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     font-weight: 300;
-  }
 
+    @media (max-width: 768px) {
+      margin-top: 30px;
+      margin-bottom: 5px;
+      text-decoration: underline;
+    }
+  }
+  #foot-copyright {
+    margin-top: 20px;
+  }
   a {
     color: $white;
     text-decoration: none;

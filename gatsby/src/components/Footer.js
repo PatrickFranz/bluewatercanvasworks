@@ -22,12 +22,12 @@ export default function Footer() {
     <footer className="footer text-faded text-center py-5">
       <Container fluid>
         <Row>
-          <Col>
+          <Col sm={6} md={3}>
             <Img fluid={logo.childImageSharp.fluid} />
             <p className="p-0 m-0">101 Westpoint Harbor Drive</p>
             <p>Redwood City, CA</p>
           </Col>
-          <Col>
+          <Col sm={6} md={3}>
             <h5 className="footer-heading">Follow</h5>
             <a
               rel="noreferrer"
@@ -37,7 +37,7 @@ export default function Footer() {
               <Facebook color="white" size="2rem" />
             </a>
           </Col>
-          <Col>
+          <Col sm={6} md={3}>
             <h5 className="footer-heading">Explore</h5>
             <Link
               className="nav-link text-uppercase text-expanded"
@@ -68,15 +68,18 @@ export default function Footer() {
               Contact
             </Link>
           </Col>
-          <Col>
+          <Col sm={6} md={3}>
             <h5 className="footer-heading">Legal</h5>
             <Link to="/privacy" className="nav-link">
               Privacy
             </Link>
+            <Link to="/tos" className="nav-link">
+              Terms of Service
+            </Link>
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col id="foot-copyright">
             <p className="p-0 m-0">
               Copyright &copy; {config.siteTitle} {new Date().getFullYear()}
             </p>
