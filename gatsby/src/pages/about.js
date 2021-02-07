@@ -24,7 +24,6 @@ export const data = graphql`
 `;
 
 const IndexPage = ({ data }) => {
-  console.log(data);
   return (
     <Layout activeLink="about">
       <Fade transitionDuration="1000">
