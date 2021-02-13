@@ -27,4 +27,10 @@ export default {
       },
     },
   ],
+  defaultValue: {
+    boatName: "",
+    manufacturer: "",
+    model: "",
+    yearbuilt: "",
+  },
 };

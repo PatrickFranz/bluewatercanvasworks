@@ -13,16 +13,15 @@ export default function Project({ project }) {
               <div className="bg-faded p-5 d-flex ml-auto rounded">
                 <h2 className="section-heading mb-0">
                   <span className="section-heading-upper">
-                    {`${project.tagline}`}
+                    {project.tagline && project.tagline}
                   </span>
                   <span className="section-heading-lower">
-                    {`${new Date(
-                      project.boatinfo.yearbuilt
-                    ).getUTCFullYear()} ${project.boatinfo.manufacturer} ${
-                      project.boatinfo.model
-                    } `}
+                    {`${project.boatinfo.yearbuilt &&
+                      new Date(project.boatinfo.yearbuilt).getUTCFullYear()} ${
+                      project.boatinfo.manufacturer
+                    } ${project.boatinfo.model} `}
                     <span className="boat-name">
-                      {` ${project.boatinfo.boatName}`}
+                      {project.boatinfo.boatName && project.boatinfo.boatName}
                     </span>
                     {}
                   </span>
@@ -42,7 +41,9 @@ export default function Project({ project }) {
             </Carousel>
             <div className="product-item-description d-flex mr-auto">
               <div className="bg-faded p-5 rounded">
-                <p className="mb-0">{project.description}</p>
+                <p className="mb-0">
+                  {project.description && project.description}
+                </p>
               </div>
             </div>
           </div>

@@ -51,4 +51,9 @@ export default {
       },
     },
   ],
+  initialValue: {
+    title: "",
+    tagline: "",
+    description: "",
+  },
 };

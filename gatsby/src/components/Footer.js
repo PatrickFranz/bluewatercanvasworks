@@ -48,21 +48,21 @@ export default function Footer() {
             </Link>
             <Link
               className="nav-link text-uppercase text-expanded"
-              to="/"
+              to="/about"
               activeClassName="active"
             >
               About
             </Link>
             <Link
               className="nav-link text-uppercase text-expanded"
-              to="/"
+              to="/projects"
               activeClassName="active"
             >
               Projects
             </Link>
             <Link
               className="nav-link text-uppercase text-expanded"
-              to="/"
+              to="/contact"
               activeClassName="active"
             >
               Contact
