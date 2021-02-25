@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import { Carousel } from 'react-bootstrap';
 
 export default function Project({ project }) {
-  // console.log(project);
+  console.log(project);
   return (
     <>
       <section className="page-section">
@@ -16,14 +16,18 @@ export default function Project({ project }) {
                     {project.tagline && project.tagline}
                   </span>
                   <span className="section-heading-lower">
-                    {`${project.boatinfo.yearbuilt &&
-                      new Date(project.boatinfo.yearbuilt).getUTCFullYear()} ${
-                      project.boatinfo.manufacturer
-                    } ${project.boatinfo.model} `}
+                    {project.boatinfo.yearbuilt &&
+                      <span className="yearbuilt">
+                        {`${new Date(project.boatinfo.yearbuilt).getUTCFullYear()} `}
+                      </span>
+                    }
+                    <span className="boatManufactorer">
+                      {`${project.boatinfo.manufacturer} `}
+                    </span> 
+                      {`${project.boatinfo.model} `}
                     <span className="boat-name">
                       {project.boatinfo.boatName && project.boatinfo.boatName}
                     </span>
-                    {}
                   </span>
                 </h2>
               </div>
