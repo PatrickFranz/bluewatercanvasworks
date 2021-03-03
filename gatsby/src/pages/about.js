@@ -15,7 +15,7 @@ export const data = graphql`
     }
     karen: file(relativePath: { eq: "assets/images/prof_karen1.png" }) {
       childImageSharp {
-        fluid(maxWidth: 150) {
+        fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
         }
       }

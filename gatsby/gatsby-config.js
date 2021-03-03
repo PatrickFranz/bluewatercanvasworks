@@ -21,7 +21,7 @@ module.exports = {
       options: {
         fonts: [
           `Raleway\:100,200,300,400,500`,
-          `open sans\:300,400,400i,700`, // you can also specify font weights and styles
+          `open sans\:300,400,400i,700`, 
         ],
         display: 'swap',
       },
@@ -42,7 +42,7 @@ module.exports = {
         background_color: config.manifestBackgroundColor,
         theme_color: config.manifestThemeColor,
         display: config.manifestDisplay,
-        icon: config.manifestIcon, // This path is relative to the root of the site.
+        icon: config.manifestIcon, 
       },
     },
     {
@@ -50,8 +50,6 @@ module.exports = {
       options: {
         projectId: 'gj6dpvho',
         dataset: 'production',
-        // a token with read permissions is required
-        // if you have a private dataset
         token: process.env.MY_SANITY_TOKEN,
         watchMode: true,
       },
@@ -60,5 +58,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
+    
   ],
 };

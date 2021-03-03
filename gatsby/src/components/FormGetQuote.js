@@ -9,7 +9,7 @@ const GetQuoteForm = () => {
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .min(2, 'Please give us your full name.')
-      .max(20, 'Please keep to less than 20 characters.')
+      .max(40, 'Please keep to less than 40 characters.')
       .required('Required'),
     email: Yup.string()
       .email('Invalid email address')
@@ -28,10 +28,9 @@ const GetQuoteForm = () => {
     setSubmitting(true);
     axios({
       method: 'post',
-      url: 'https://getform.io/f/447b7079-2561-48dd-bd85-aa421990d466',
+      url: process.env.GATSBY_GET_FORM_URL,
       data: values,
-    }).then(r => {
-      console.log(r);
+    }).then(res => {
       resetForm({});
       handleShow();
     });
@@ -41,6 +40,7 @@ const GetQuoteForm = () => {
 
   return (
     <>
+      {console.log(process.env.GATSBY_GET_FORM_URL)}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Thank you!</Modal.Title>
@@ -81,16 +81,12 @@ const GetQuoteForm = () => {
         }) => (
           <Form
             name="get-quote"
-            // data-nelify="true"
-            // data-nelify-honeypot="bot-field"
             onSubmit={e => {
               e.preventDefault();
               handleSubmit(values);
             }}
           >
             <Form.Group>
-              {/* <Form.Control type="hidden" name="form-name" value="get-quote" />
-            <Form.Control type="hidden" name="bot-field" /> */}
               <Form.Control
                 name="name"
                 size="lg"
@@ -170,13 +166,7 @@ const GetQuoteForm = () => {
                 value={values.description}
               />
             </Form.Group>
-            <Form.Group>
-              {/* <div
-              className="g-recaptcha"
-              data-sitekey="6LcwAzgaAAAAAGlgUkFdY4vTse4lyzs1VpcIwNPS"
-            ></div> */}
-            </Form.Group>
-
+            
             <Button
               variant="primary"
               type="submit"

@@ -2,7 +2,7 @@
 
 Build Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/89bc9402-a2ff-4762-afb5-03792670c507/deploy-status)](https://app.netlify.com/sites/bluewatercanvasworks/deploys)
 
-Website built for Blue Water Canvas Works in Redwood City
+Website built for Blue Water Canvas Works in Redwood City.
 
 @author: Patrick Franz
 @author-website: https://www.patrickfranz.com
@@ -39,5 +39,5 @@ Deploy to live site by committing git to GitHub
 2. `git add .`
 3. `git commit`
 4. `git push` to above GitHub Repo
-5. Site will auto-build anddeploy on Netlify
+5. Site will auto-build and deploy on Netlify
 6. View site @ https://www.bluewatercanvasworks.net

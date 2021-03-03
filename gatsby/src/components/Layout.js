@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import config from '../../config';
 
 import '../assets/sass/bluewater.scss';
 import Footer from './Footer';
@@ -33,11 +34,10 @@ class Layout extends Component {
             <Helmet
               title={data.site.siteMetadata.title}
               meta={[
-                { name: 'description', content: 'SF Bay Canvas Works' },
+                { name: 'description', content: config.subHeading },
                 {
                   name: 'keywords',
-                  content:
-                    'canvas, san francisco, design, manufacture, sailboat, powerboat, sail, sailing, sails, bimini, dodger, canvas design, canvas fabrication, boat fabric',
+                  content: config.metaKeywords,
                 },
               ]}
             >
