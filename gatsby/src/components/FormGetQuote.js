@@ -40,7 +40,6 @@ const GetQuoteForm = () => {
 
   return (
     <>
-      {console.log(process.env.GATSBY_GET_FORM_URL)}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Thank you!</Modal.Title>
